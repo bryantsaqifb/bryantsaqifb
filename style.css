@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Poppins&display=swap');
+
+:root{
+    --body-color : #FFFFFF;
+    --bodysecond-color : #29A973;
+    --main-color : #2E4B3F;
+    --mainsecond-color : #1FA7FF;
+
+    --main-font : 'Open Sans', sans-serif;
+    --heading-font : 'Poppins', sans-serif;
+
+}
+body{
+    background-color:var(--body-color);
+    font-family: var(--main-font);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+section{
+    margin-top: 200px;
+}
+
+.container{
+    max-width: 1500px;
+    
+}
+.navbar .nav-wrapper{
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 86px;
+}
+.nav-wrapper.menu-toggle{
+    display: none;
+}
+.nav-wrapper .logo{
+    font-size: 2rem;
+    font-family: var(--heading-font);
+    font-weight:700 ;
+    color: var(--mainsecond-color);
+}
+.nav-wrapper .menu-wrapper{
+    display:flex;
+    gap: 40px;
+    background-color: #2ECB89;
+
+}
+.nav-wrapper .menu-wrapper .menu{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.menu-wrapper .menu .menu-link{
+    font-size: 1.25rem;
+    color: #444444;
+    font-family: var(--heading-font);
+    font-weight: 500;
+}
+.menu-wrapper .menu .menu-link.active{
+    font-weight: 500;
+    color: #FFFFFF;
+}
+.menu-wrapper .btn-member{
+    font-family: var(--heading-font);
+    color: #2ECB89;
+    font-weight: 600;
+    background-color: #FFFFFF;
+    padding: 12px, 40px, 12px, 40px;
+    border-radius: 50px;  
+}
+
+/* home Start */
+.home{
+    margin-top: 204px;
+}
+
+.home .home-wrapper{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.home-wrapper .heading{
+    font-size: 3.4rem;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    color: #404040;
+}
+.home-wrapper .subheading{
+    font-size: 1.25rem;
+    color: #787878;
+    max-width: 500px;
+    margin: 25px 0;
+}
+.home-wrapper .box-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    width: 186px;
+    height: 56px;
+    color: #FFFFFF;
+    font-weight: 600;
+    background-color:#2ECB89;
+    padding: 16px, 40px;
+    border-radius: 16px; 
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.home-wrapper .box{
+    width: 106px;
+    height: 24px;
+    font-family: 'head';
+    font-weight: 600;
+    font-size: 16px;
+    color:#FFFFFF;
+}
+.home-wrapper .conten-left{
+    flex: 0 0 50%;
+}
+.home-wrapper .conten-right{
+    flex: 0 0 50%;
+}
+.conten-right .img-wrapper{
+    max-width: 500px;
+}
+.conten-right .img-wrapper{
+    width: 100%; 
+}
+
+/* home End */
+@media screen and (max-width: 991px) {
+    .navbar .nav-wrapper{
+        padding: 0 30px;
+    }
+    .nav-wrapper .menu-wrapper .menu{
+        gap: 20px;
+    }
+    .menu-wrapper .menu .menu-link{
+        font-size: 1rem;
+    }
+    .menu-wrapper .btn-member{
+        padding: 7px, 35px, 7px, 35px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-wrapper .menu-wrapper{
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        display: block;
+        text-align: center;
+        padding-bottom: 3rem;
+        border-radius: 10px;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .5s ease-in-out;
+    }
+    .nav-wrapper .menu-wrapper.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        transition: .5s ease-in-out;
+    }
+    .menu-toggle.bx-x{
+        transform: rotate(360deg);
+        transition: .5s;
+    }
+    .nav-wrapper .menu-wrapper .menu{
+        display: block;
+    }
+    .menu-wrapper .menu .menu-item{
+        margin: 30px 0;
+    }
+   .menu .menu-item .menu-link{
+        color: #444444;
+    }
+    .nav-wrapper .menu-toggle{
+        display: initial;
+        font-size: 2.5rem;
+        color: #444444;
+        transition: .5s;
+}
+}
